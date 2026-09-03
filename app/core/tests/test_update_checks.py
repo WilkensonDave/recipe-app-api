@@ -1,5 +1,5 @@
 """
-Tests for the health check API.
+Tests for the update API.
 """
 
 from django.test import TestCase
@@ -19,19 +19,6 @@ class HealthCheckTests(TestCase):
 
         client = APIClient()
         url = reverse('health-check')
-
-        res = client.get(url)
-
-        self.assertEqual(res.status_code, status.HTTP_200_OK)
-
-class UpdateCheckTests(TestCase):
-    """Test the health check API."""
-
-    def test_health_check(self):
-        """Test health check API."""
-
-        client = APIClient()
-        url = reverse('update-check')
 
         res = client.get(url)
 
